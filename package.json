@@ -1,0 +1,77 @@
+{
+  "name": "easy-formula-editor",
+  "version": "0.0.1-alpha.1",
+  "description": "A formula editor based on Latex and MathJax, easy to use and visual.",
+  "main": "dist/formula-editor.min.js",
+  "module": "dist/formula-editor.es.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*", "public/*"
+  ],
+  "repository": "https://github.com/hansonGong/math-editor.git",
+  "scripts": {
+    "build": "rm -rf dist && yarn build:es && yarn build:umd",
+    "build:es": "webpack --config build/webpack.es.js",
+    "build:umd": "webpack --config build/webpack.umd.js",
+    "lint-staged": "lint-staged",
+    "prepare": "husky install",
+    "commit": "git-cz",
+    "commitmsg": "validate-commit-msg",
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -p 0",
+    "lint:fix": "eslint --fix 'src/**/*.ts'",
+    "prettier": "prettier --write src/**/*.{ts,less}",
+    "lint": "yarn prettier && yarn lint:fix"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@typescript-eslint/eslint-plugin": "^5.18.0",
+    "@typescript-eslint/parser": "^5.18.0",
+    "babel-loader": "^8.2.4",
+    "commitizen": "^4.2.4",
+    "css-loader": "^6.7.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "eslint": "^8.13.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.1",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
+    "lint-staged": "^12.0.0",
+    "prettier": "^2.3.2",
+    "style-loader": "^3.3.1",
+    "ts-loader": "^9.2.8",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3",
+    "validate-commit-msg": "^2.14.0",
+    "webpack": "^5.71.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-merge": "^5.8.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "npx commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "*{.js,.ts}": [
+      "yarn lint",
+      "git add"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "keywords": [
+    "数学公式",
+    "公式编辑器",
+    "formula",
+    "formula editor",
+    "latex",
+    "mathJax"
+  ],
+  "author": "hanson",
+  "license": "MIT"
+}

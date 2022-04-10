@@ -1,0 +1,137 @@
+:root {
+  --me-theme: #bcd4e7;
+  --me-theme-light: #d0e3f2;
+  --me-hover: #f1f2f4;
+  --me-border: #ddd;
+  --me-gray: ##666;
+}
+
+.math-editor {
+  color: #000;
+  font-size: 18px;
+  text-align: left;
+  border: 1px solid #ccc;
+  overflow: hidden;
+
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  div {
+    box-sizing: border-box;
+  }
+
+  .me-menu {
+    width: 100%;
+    padding: 0 10px;
+    background: var(--me-theme);
+    border-bottom: 1px solid var(--me-border);
+
+    &-item {
+      float: left;
+      position: relative;
+      width: 50px;
+      padding: 5px;
+      text-align: center;
+      cursor: pointer;
+
+      .icon {
+        display: block;
+        height: 22px;
+        margin-bottom: 5px;
+        line-height: 28px;
+      }
+
+      &.active {
+        background: var(--me-theme-light);
+      }
+    }
+  }
+
+  .me-latex,
+  .me-svg {
+    float: left;
+    width: 50%;
+    height: calc(100% - 1px);
+    padding: 10px 12px;
+  }
+
+  .me-latex {
+    font-size: 14px;
+    letter-spacing: 1px;
+    overflow-y: auto;
+  }
+
+  .me-svg {
+    display: flex;
+    align-items: center;
+    background: #f6f7f8;
+    overflow-x: auto;
+  }
+
+  .me-droplist {
+    position: absolute;
+    left: 0;
+    text-align: left;
+    background: #fff;
+    border: 1px solid var(--me-border);
+    border-radius: 3px;
+
+    .me-dp-title {
+      height: 25px;
+      padding-left: 12px;
+      font-size: 12px;
+      line-height: 29px;
+      background: var(--me-theme-light);
+      border-bottom: 1px solid var(--me-border);
+    }
+
+    .me-item:hover {
+      background: var(--me-hover);
+    }
+
+    .me-list {
+      padding: 5px 0;
+      list-style: none;
+      line-height: 1.36;
+
+      .me-item {
+        font-size: 16px;
+        padding: 5px 12px;
+
+        .title {
+          margin-bottom: 8px;
+          font-size: 12px;
+          color: var(--me-gray);
+        }
+      }
+    }
+
+    .me-block {
+      list-style: none;
+      padding: 5px;
+
+      .me-item {
+        box-sizing: border-box;
+        display: inline-block;
+        min-width: 32px;
+        min-height: 32px;
+        margin: 5px;
+        padding: 2px;
+        line-height: 30px;
+        text-align: center;
+        border: 1px solid var(--me-border);
+        border-radius: 3px;
+      }
+    }
+  }
+
+  .clearfix:after {
+    content: '';
+    display: block;
+    height: 0;
+    visibility: hidden;
+    clear: both;
+  }
+}

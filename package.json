@@ -1,10 +1,14 @@
 {
-  "name": "@hanson/formula-editor",
+  "name": "easy-formula-editor",
   "version": "0.0.1-alpha.1",
   "description": "A formula editor based on Latex and MathJax, easy to use and visual.",
   "main": "dist/formula-editor.min.js",
   "module": "dist/formula-editor.es.js",
   "types": "dist/index.d.ts",
+  "files": [
+    "dist/*", "public/*"
+  ],
+  "repository": "https://github.com/hansonGong/math-editor.git",
   "scripts": {
     "build": "rm -rf dist && yarn build:es && yarn build:umd",
     "build:es": "webpack --config build/webpack.es.js",

@@ -23,10 +23,10 @@ Plugin Features：
 ```
 ### NPM
 ```bash
-npm i @hanson/formula-editor
+npm i easy-formula-editor
 ```
 ```js
-import formulaEditor from "@hanson/formula-editor";
+import formulaEditor from "easy-formula-editor";
 const editor = new formulaEditor();
 editor.create('#test');
 ```

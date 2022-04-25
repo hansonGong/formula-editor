@@ -1,6 +1,6 @@
 {
   "name": "easy-formula-editor",
-  "version": "0.0.1-alpha.1",
+  "version": "0.0.1-alpha.2",
   "description": "A formula editor based on Latex and MathJax, easy to use and visual.",
   "main": "dist/formula-editor.min.js",
   "module": "dist/formula-editor.es.js",

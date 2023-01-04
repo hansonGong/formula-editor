@@ -16,6 +16,7 @@ declare class Editor {
     selection: SelectionAndRangeAPI;
     menus: Menus;
     latex: Text;
+    t: FnType<string, string>;
     constructor();
     static $: typeof $;
     /**

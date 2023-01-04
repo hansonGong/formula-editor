@@ -2,15 +2,15 @@ import DropListMenu from '../menu-constructors/DropListMenu'
 import $ from '../../utils/dom-core'
 import { createMemuElem } from '../../utils/util'
 import Editor from '../../editor/index'
-import CalculusList from '../common/InlineBlockList'
+import AdvancedMathList from '../common/InlineBlockList'
 
-class Calculus extends DropListMenu {
+class AdvancedMath extends DropListMenu {
   constructor(editor: Editor) {
     const $elem = $(createMemuElem('\\Sigma'))
-    const presetList = new CalculusList(editor.menusConfig.calculus)
+    const presetList = new AdvancedMathList(editor.menusConfig.AdvancedMath)
     const presetConf = {
       width: 244,
-      title: '插入微积分',
+      title: editor.t('fe.am'),
       list: presetList.getItemList(),
       clickHandler: (value: string) => {
         this.command(value)
@@ -20,4 +20,4 @@ class Calculus extends DropListMenu {
   }
 }
 
-export default Calculus
+export default AdvancedMath

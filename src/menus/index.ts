@@ -47,7 +47,7 @@ class Menus {
     if (typeof MenuConstructor !== 'function') return
 
     if (this.menuList.some((menu) => menu.key === menuKey)) {
-      console.warn('菜单名称重复:' + menuKey)
+      console.warn('Duplicate menu name:' + menuKey)
     } else {
       const m = new MenuConstructor(this.editor)
       m.key = menuKey

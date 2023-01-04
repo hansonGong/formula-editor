@@ -2,16 +2,15 @@ import DropListMenu from '../menu-constructors/DropListMenu'
 import $ from '../../utils/dom-core'
 import { createMemuElem } from '../../utils/util'
 import Editor from '../../editor/index'
-import PresetList from '../common/PresetList'
+import LinearAlgebraList from '../common/InlineBlockList'
 
-class Presets extends DropListMenu {
+class LinearAlgebra extends DropListMenu {
   constructor(editor: Editor) {
-    const $elem = $(createMemuElem('f_{(x)}'))
-    const presetList = new PresetList(editor.menusConfig.presets(editor.t))
+    const $elem = $(createMemuElem('\\left|x\\right|'))
+    const presetList = new LinearAlgebraList(editor.menusConfig.LinearAlgebra)
     const presetConf = {
-      width: 252,
-      title: editor.t('fe.p'),
-      type: 'list',
+      width: 244,
+      title: editor.t('fe.lg'),
       list: presetList.getItemList(),
       clickHandler: (value: string) => {
         this.command(value)
@@ -21,4 +20,4 @@ class Presets extends DropListMenu {
   }
 }
 
-export default Presets
+export default LinearAlgebra

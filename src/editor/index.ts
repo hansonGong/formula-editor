@@ -9,6 +9,7 @@ import initSelection from './init-selection'
 import Menus from '../menus/index'
 import Text from '../text/index'
 import { hightlightHtml } from '../utils/util'
+import { t } from '../utils/i18n'
 
 class Editor {
   public config: ConfigType
@@ -22,6 +23,7 @@ class Editor {
   public selection: SelectionAndRangeAPI
   public menus: Menus
   public latex: Text
+  public t: FnType<string, string>
 
   constructor() {
     this.config = defaultConfig
@@ -34,6 +36,7 @@ class Editor {
     this.selection = new SelectionAndRangeAPI(this)
     this.menus = new Menus(this)
     this.latex = new Text(this)
+    this.t = t
   }
 
   // 暴露 $
@@ -58,7 +61,7 @@ class Editor {
     initDom(this)
 
     const $rootElem = $(rootSelector)
-    $rootElem.text('资源加载中...')
+    $rootElem.text(this.t('fe.l'))
 
     // mathJax加载完成
     const onReady = () => {

@@ -9,7 +9,7 @@ class Arrows extends DropListMenu {
     const $elem = $(createMemuElem('\\rightarrow'))
     const presetList = new ArrowList(editor.menusConfig.arrows)
     const presetConf = {
-      title: '插入箭头符号',
+      title: editor.t('fe.a'),
       list: presetList.getItemList(),
       clickHandler: (value: string) => {
         this.command(value)

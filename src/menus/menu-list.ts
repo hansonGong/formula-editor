@@ -2,7 +2,8 @@ import Presets from './presets'
 import Operators from './operators'
 import GreekLetters from './greek-letters'
 import Inequation from './inequation'
-import Calculus from './calculus'
+import AdvancedMath from './advanced-math'
+import LinearAlgebra from './linear-algebra'
 import Arrows from './arrows'
 import Trigonometric from './trigonometric'
 
@@ -11,7 +12,8 @@ export default {
   operators: Operators,
   greekLetters: GreekLetters,
   inequation: Inequation,
-  calculus: Calculus,
+  AdvancedMath: AdvancedMath,
+  LinearAlgebra: LinearAlgebra,
   arrows: Arrows,
   Trigonometric: Trigonometric,
 }

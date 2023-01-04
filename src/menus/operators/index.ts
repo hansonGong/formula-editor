@@ -6,10 +6,10 @@ import OperatorList from '../common/InlineBlockList'
 
 class Operators extends DropListMenu {
   constructor(editor: Editor) {
-    const $elem = $(createMemuElem('O'))
+    const $elem = $(createMemuElem('+'))
     const presetList = new OperatorList(editor.menusConfig.operators)
     const presetConf = {
-      title: '插入运算符',
+      title: editor.t('fe.o'),
       list: presetList.getItemList(),
       clickHandler: (value: string) => {
         this.command(value)

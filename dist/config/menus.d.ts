@@ -4,11 +4,12 @@ export declare type Presets = {
 }[];
 export declare type MenuType = {
     menus: string[];
-    presets: Presets;
+    presets: FnType<Presets, FnType<string, string>>;
     operators: string[];
     greekLetters: string[];
     inequation: string[];
-    calculus: string[];
+    AdvancedMath: string[];
+    LinearAlgebra: string[];
     arrows: string[];
     trigonometric: string[];
 };

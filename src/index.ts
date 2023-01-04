@@ -7,7 +7,7 @@ import formulaEditor from './editor'
 try {
   document
 } catch (ex) {
-  throw new Error('请在浏览器环境下运行')
+  throw new Error('Please run in the browser environment!')
 }
 
 export default formulaEditor

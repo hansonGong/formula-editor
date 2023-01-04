@@ -5,11 +5,12 @@ export type Presets = {
 
 export type MenuType = {
   menus: string[]
-  presets: Presets
+  presets: FnType<Presets, FnType<string, string>>
   operators: string[]
   greekLetters: string[]
   inequation: string[]
-  calculus: string[]
+  AdvancedMath: string[]
+  LinearAlgebra: string[]
   arrows: string[]
   trigonometric: string[]
 }
@@ -21,37 +22,40 @@ export const menusConfig: MenuType = {
     'operators',
     'greekLetters',
     'inequation',
-    'calculus',
+    'AdvancedMath',
+    'LinearAlgebra',
     'arrows',
     'Trigonometric',
   ],
-  presets: [
-    {
-      label: '勾股定理',
-      value: 'a^2+b^2=c^2',
-    },
-    {
-      label: '双曲线',
-      value: '\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1',
-    },
-    {
-      label: '正弦',
-      value:
-        '\\sin \\alpha + \\sin \\beta =2 \\sin \\frac{\\alpha + \\beta}{2}\\cos \\frac{\\alpha - \\beta}{2}',
-    },
-    {
-      label: '正切',
-      value: '\\tan(x + y) = \\frac{\\tan x + \\tan y}{1 - \\tan x\\tan y}',
-    },
-    {
-      label: '定积分',
-      value: '\\int_a^b f(x) dx = F(b) - F(a)',
-    },
-    {
-      label: '初等函数',
-      value: "\\left( \\sin x\\right) '=\\cos x",
-    },
-  ],
+  presets(t: FnType<string, string>): Presets {
+    return [
+      // 勾股定理
+      {
+        label: t('fe.pt'),
+        value: 'a^2+b^2=c^2',
+      },
+      // 双曲线
+      {
+        label: t('fe.h'),
+        value: '\\frac{x^2}{a^2}-\\frac{y^2}{b^2}=1',
+      },
+      // 三角函数关系
+      {
+        label: t('fe.tfr'),
+        value: '\\sin^2\\theta +\\cos^2\\theta = 1',
+      },
+      // 导数
+      {
+        label: t('fe.d'),
+        value: "\\left( e^x \\right) ' = e^x",
+      },
+      // 牛莱公式
+      {
+        label: t('fe.nl'),
+        value: '\\int_a^b f(x) dx = F(b) - F(a)',
+      },
+    ]
+  },
   operators: [
     '+',
     '-',
@@ -141,6 +145,7 @@ export const menusConfig: MenuType = {
     '\\Omega',
   ],
   inequation: [
+    '=',
     '\\leq',
     '\\geq',
     '\\prec',
@@ -164,6 +169,22 @@ export const menusConfig: MenuType = {
     '\\in',
     '\\ni',
     '\\notin',
+  ],
+  AdvancedMath: [
+    'x_{a}',
+    'x^{b}',
+    'x_{a}^{b}',
+    '\\sqrt{x}',
+    '\\sqrt[n]{x}',
+    '\\bigcap_{a}^{b}',
+    '\\bigcup_{a}^{b}',
+    '\\prod_{a}^{b}',
+    '\\coprod_{a}^{b}',
+    '\\int_{a}^{b}',
+    '\\oint_{a}^{b}',
+    '\\sum_{a}^{b}{x}',
+    '\\lim_{a  \\rightarrow b}{x}',
+    '\\frac{dy}{dx}|_{t=0}',
     '\\vec{a}',
     '\\bar{a}',
     '\\tilde{a}',
@@ -177,31 +198,18 @@ export const menusConfig: MenuType = {
     '\\overbrace{ab}',
     '\\underbrace{ab}',
   ],
-  calculus: [
-    'x_{a}',
-    'x^{b}',
-    'x_{a}^{b}',
-    '\\bar{x}',
-    '\\tilde{x}',
-    '\\sqrt{x}',
-    '\\sqrt[n]{x}',
-    '\\bigcap_{a}^{b}',
-    '\\bigcup_{a}^{b}',
-    '\\prod_{a}^{b}',
-    '\\coprod_{a}^{b}',
+  LinearAlgebra: [
+    'A^{*}',
+    'A^{T}',
+    'A^{-1}',
     '\\left( x  \\right)',
     '\\left[ x  \\right]',
     '\\left \\{ x  \\right \\}',
     '\\left| x  \\right|',
-    '\\int_{a}^{b}',
-    '\\oint_{a}^{b}',
-    '\\sum_{a}^{b}{x}',
-    '\\lim_{a  \\rightarrow b}{x}',
     '\\begin{pmatrix}a&b\\\\c&d\\\\ \\end{pmatrix}',
     '\\begin{bmatrix}a&b\\\\c&d\\\\ \\end{bmatrix}',
     '\\begin{Bmatrix}a&b\\\\c&d\\\\ \\end{Bmatrix}',
     '\\begin{vmatrix}a&b\\\\c&d\\\\ \\end{vmatrix}',
-    '\\frac{dy}{dx}|_{t=0}',
   ],
   arrows: [
     '\\leftarrow',
@@ -224,5 +232,7 @@ export const menusConfig: MenuType = {
     '\\csc \\theta',
     '\\sec \\theta',
     '\\cot \\theta',
+    '\\arcsin \\theta',
+    '\\arccos \\theta',
   ],
 }

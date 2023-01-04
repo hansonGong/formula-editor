@@ -6,10 +6,10 @@ import GreekLetterList from '../common/InlineBlockList'
 
 class GreekLetters extends DropListMenu {
   constructor(editor: Editor) {
-    const $elem = $(createMemuElem('\\Omega'))
+    const $elem = $(createMemuElem('\\alpha'))
     const presetList = new GreekLetterList(editor.menusConfig.greekLetters)
     const presetConf = {
-      title: '插入希腊字母',
+      title: editor.t('fe.gl'),
       list: presetList.getItemList(),
       clickHandler: (value: string) => {
         this.command(value)

@@ -24,6 +24,9 @@ export const NON_CHARACTER_KEYS = [
   'Backspace',
   'Delete',
   'Insert',
+  'c',
+  'v',
+  'z'
 ]
 
 /** 需拦截操作的按键 */
